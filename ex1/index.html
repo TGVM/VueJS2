@@ -1,0 +1,33 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="desafio">
+    <p>Usando VueJS - {{nome}}, {{idade}}</p>
+
+    <p>Idade multiplicado por 3: {{idade*3}}</p>
+
+    <p>Valor random entre 0 e 1: {{Math.random()}}</p>
+
+    <div>
+        <img v-bind:src="imagem" height="400">
+    </div>
+
+    <div>
+        <input type="text" v-bind:value="nome">
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#desafio',
+        data:{
+            nome: 'Thiago',
+            idade: 24,
+            imagem: 'http://files.cod3r.com.br/curso-vue/vue.jpg'
+        },
+        methods:{
+            alterarTitulo(event){
+                this.titulo = event.target.value
+            }
+        }
+    })
+</script>
